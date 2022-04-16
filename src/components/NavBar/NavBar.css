@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.navbar__logo {
+    height: 80px;
+    width: 160px;
+    margin-left: 5%;
+    padding: 3px;
+}
+
+.navbar__logo img {
+    height: 100%;
+    width: 100%;
+}
+
+.navbar__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin-right: 10%;
+}
+
+.navbar__link {
+    padding: 10px;
+}
+
+.navbar__link a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar__link a:hover {
+    color: red;
+}
