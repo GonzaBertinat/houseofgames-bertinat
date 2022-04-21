@@ -1,14 +1,19 @@
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: black;
 }
 
 .navbar__logo {
-    height: 80px;
-    width: 160px;
+    height: 75px;
+    width: 150px;
     margin-left: 5%;
     padding: 3px;
+}
+
+.navbar__logo:hover {
+    transform: scale(1.05);
 }
 
 .navbar__logo img {
@@ -21,7 +26,6 @@
     align-items: center;
     justify-content: center;
     list-style: none;
-    margin-right: 10%;
 }
 
 .navbar__link {

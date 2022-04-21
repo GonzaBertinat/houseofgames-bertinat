@@ -1,6 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import logoHeader from '../../../src/assets/img/logo-header.png';
+import CartWidget from '../CartWidget/CartWidget';
 
 const NavBar = () => {
     return (
@@ -24,6 +25,7 @@ const NavBar = () => {
                     <a href='#'>Accesorios Gamer</a>
                 </li>
             </ul>
+            <CartWidget />
         </nav>
     );
 }
