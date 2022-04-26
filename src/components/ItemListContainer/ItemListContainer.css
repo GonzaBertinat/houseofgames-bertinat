@@ -1,8 +1,6 @@
 .item-list-container {
     background-color: #ebebeb;
-}
-
-.item-list-container__greeting {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }

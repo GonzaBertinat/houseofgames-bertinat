@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -10,7 +9,7 @@ const App = () => {
         <NavBar />
       </header>
       <main>
-        <ItemListContainer greeting="Bienvenido a House of Games!" />
+        <ItemListContainer />
       </main>
       <footer></footer>
     </div>
