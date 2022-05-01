@@ -4,7 +4,7 @@ import './ItemCount.css';
 const ItemCount = ({ stock, initial, onAdd }) => {
 
     const stockAvailable = stock > 0;
-     
+
     const increaseCount = () => {
         if(count < stock){
             setCount(count + 1);
@@ -21,17 +21,14 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 
     return (
     <div className='item-count'>
-        <div className='item-count__product'>
-            <h3 className='item-count__title'>PlayStation 5</h3>
-            <div className='item-count__controlls'>
-                <button onClick={decreaseCount}>-</button>
-                <span>{count}</span>
-                <button onClick={increaseCount}>+</button>
-            </div>
-            <div className='item-count__stock'>
-                <span>Stock disponible: {stock}</span>
-            </div>    
+        <div className='item-count__stock'>
+            <span>Stock disponible: {stock}</span>
         </div>
+        <div className='item-count__controlls'>
+            <button onClick={decreaseCount}>-</button>
+            <span>{count}</span>
+            <button onClick={increaseCount}>+</button>
+        </div>    
         <div className='item-count__add'>
             <button className={stockAvailable ? 'item-count__add-enabled' : 'item-count__add-disabled'} 
                     onClick={() => {onAdd(count)}}

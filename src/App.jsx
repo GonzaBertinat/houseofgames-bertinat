@@ -1,6 +1,7 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 const App = () => {
   return (
@@ -9,7 +10,8 @@ const App = () => {
         <NavBar />
       </header>
       <main>
-        <ItemListContainer />
+        {/* <ItemListContainer /> */}
+        <ItemDetailContainer />
       </main>
       <footer></footer>
     </div>
