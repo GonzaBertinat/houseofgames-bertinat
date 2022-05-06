@@ -1,0 +1,29 @@
+.not-found {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;    
+}
+
+.not-found__title {
+    font-size: 2rem;
+    margin: 30px 0;
+}
+
+.not-found__button {
+    background-color: black;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.not-found__button:hover {
+    background-color: red;
+    transform: scale(1.05);
+}
+
+.not-found__button a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}

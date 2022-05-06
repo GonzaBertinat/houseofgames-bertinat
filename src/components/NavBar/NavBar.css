@@ -1,15 +1,15 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: black;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navbar__logo {
     height: 75px;
-    width: 150px;
     margin-left: 5%;
     padding: 3px;
+    width: 150px;
 }
 
 .navbar__logo:hover {
@@ -22,8 +22,8 @@
 }
 
 .navbar__links {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
     list-style: none;
 }
@@ -33,12 +33,19 @@
 }
 
 .navbar__link a {
-    text-decoration: none;
     font-size: 1.3rem;
     font-weight: bold;
-    color: white;
+    text-decoration: none;
 }
 
 .navbar__link a:hover {
     color: red;
+}
+
+.navbar__link--active {
+    color: red;
+}
+
+.navbar__link--disabled {
+    color: white;
 }
