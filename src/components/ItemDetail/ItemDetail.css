@@ -62,3 +62,21 @@
     font-weight: bold;
 }
 
+.item-detail__counter {
+    align-items: center;
+    display: flex;
+    height: 40%;
+    justify-content: center;
+    width: 100%;
+}
+
+.item-detail__to-cart {
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;    
+    padding: 5px 20px;
+    text-decoration: none;
+}

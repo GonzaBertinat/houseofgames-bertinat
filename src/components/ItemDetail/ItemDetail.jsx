@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
 
-const onAdd = (count) => {
-    console.log(`La cantidad seleccionada es ${count}`);
-}
-
 const ItemDetail = ({ item }) => {
+
+    const [quantity, setQuantity] = useState(0);
+
+    const onAdd = (quantityToAdd) => {
+        setQuantity(quantityToAdd);
+    }
+    
     return (
         <div className='item-detail'>
             <div className='item-detail__picture'>
@@ -21,7 +25,10 @@ const ItemDetail = ({ item }) => {
                     <div className='item-detail__price'>
                         <span>{item?.price}</span>
                     </div>
-                    {item.title && <ItemCount stock={item?.stock ? item.stock : 0} initial={1} onAdd={onAdd} />}    
+                    <div className='item-detail__counter'>
+                        {quantity === 0 ? <ItemCount stock={item?.stock ? item.stock : 0} initial={1} onAdd={onAdd} />
+                                        : <Link className='item-detail__to-cart' to={'/cart'}>{`Finalizar compra - ${quantity} item/s`}</Link>}
+                    </div>  
                 </div>
             </div>
         </div>
