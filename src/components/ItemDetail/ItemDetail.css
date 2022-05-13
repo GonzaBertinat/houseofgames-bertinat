@@ -80,3 +80,15 @@
     padding: 5px 20px;
     text-decoration: none;
 }
+
+.item-detail__controlls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item-detail__controlls button {
+    height: 40px;
+    margin: 4px;
+    width: 80px;
+}
