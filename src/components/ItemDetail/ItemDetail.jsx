@@ -24,19 +24,11 @@ const ItemDetail = ({ item }) => {
                     <h3 className='item-detail__title'>{item?.title}</h3>
                     <p className='item-detail__description'>{item?.description}</p>
                     <div className='item-detail__price'>
-                        <span>{item?.price}</span>
+                        <span>$ {item?.price}</span>
                     </div>
                     <div className='item-detail__counter'>
                         <ItemCount stock={item?.stock ? item.stock : 0} initial={1} onAdd={onAddHandler} />
-                    </div>  
-                    <div className='item-detail__controlls'>
-                        <button onClick={() => {console.log(cartContext.products)}}>Ver carrito</button>
-                        <button onClick={() => {cartContext.removeItem(item.id)}}>Eliminar producto</button>
-                        <button onClick={() => {cartContext.clear()}}>Limpiar carrito</button>
-                        <button onClick={() => {console.log(cartContext.getCartQuantity())}}>Cantidad de productos</button>
-                        <button onClick={() => {console.log(cartContext.isInCart(item.id))}}>Está en el carrito?</button>
                     </div>
-                    {cartContext.getCartQuantity() > 0 && <Link className='item-detail__to-cart' to={'/cart'}>{`Finalizar compra - ${cartContext.getCartQuantity()} item/s`}</Link>}
                 </div>
             </div>
         </div>

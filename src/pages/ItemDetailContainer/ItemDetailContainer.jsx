@@ -28,12 +28,12 @@ const ItemDetailContainer = () => {
     }, [id]);
 
     return (
-        <div className='item-detail-container'>
+        <section className='item-detail-container'>
             {
                 loading ? <SpinnerLoader/> : 
                 item ? <ItemDetail item={item} /> : <NotFound />
             }
-        </div>
+        </section>
     );
 }
 
