@@ -1,23 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from '../../components/ItemList/ItemList';
-import NotFound from '../../components/NotFound/NotFound';
 import SpinnerLoader from '../../components/SpinnerLoader/SpinnerLoader';
-import { getProducts } from '../../helpers/ProductsAsyncMock';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import './ItemListContainer.css'
+import NotFound from '../NotFound/NotFound';
+
+const getProducts = categoryId => {
+    const db = getFirestore();
+    const itemsCollection = collection(db, 'items');
+    
+    if(categoryId) {
+        const q = query(itemsCollection, where('category', '==', categoryId));
+        return getDocs(q)
+                .then((snapshot) => { 
+                    return snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+                });
+    } else {
+        return getDocs(itemsCollection)
+                .then((snapshot) => { 
+                    return snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
+                });  
+    }     
+}
 
 const ItemListContainer = () => {
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const { categoryId } = useParams();
 
     useEffect(() => {
         setLoading(true);
-        getProducts()
+        getProducts(categoryId)
             .then(res => {
-                const productsFiltered = categoryId ? res.filter(product => product.category === categoryId) : res;
-                setProducts(productsFiltered);
+                setProducts(res);
             })
             .catch(err => {
                 console.log(err);

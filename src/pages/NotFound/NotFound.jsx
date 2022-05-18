@@ -6,9 +6,11 @@ const NotFound = () => {
     return (
         <div className='not-found'>
             <h1 className='not-found__title'>Error: la página solicitada no existe</h1>
-            <div className='not-found__button'>
-                <Link to="/">Volver al Home</Link>
-            </div>        
+            <Link to="/">
+                <button className='not-found__button'>
+                    Volver al Home
+                </button>
+            </Link> 
         </div>
     );
 }
