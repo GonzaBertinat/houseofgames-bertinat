@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import CartItem from '../../components/CartItem/CartItem';
 import CartContext from '../../store/CartContext';
 import { Link } from 'react-router-dom';
+import MessageCard from '../../components/MessageCard/MessageCard';
+import sadFaceIcon from '../../assets/img/sad-face.png';
 import './Cart.css';
-import icon from '../../assets/img/face.png';
 
 const Cart = () => {
     const cartContext = useContext(CartContext);
@@ -26,24 +27,12 @@ const Cart = () => {
                         <div className='cart__footer'>    
                             <button onClick={() => cartContext.clear()} className='cart__button'>Limpiar carrito</button> 
                             <span className='cart__total'>{`Total: $ ${cartContext.getTotalPrice()}`}</span>
-                            <button className='cart__button'>Terminar mi compra</button>                              
+                            <Link to={'/checkout'}>
+                                <button className='cart__button'>Terminar mi compra</button>
+                            </Link>                        
                         </div>                           
                     </div> 
-                    :
-                    <div className='cart-empty-container'>
-                        <div className='cart-empty__message'>
-                            <div className='cart-empty__image-container'>
-                                <img src={icon} alt="Emoji" />
-                            </div>
-                            <span>Tu carrito está vacío</span>
-                        </div>
-                        <span className='cart-empty__invite'>Te invitamos a que conozcas nuestros productos</span>
-                        <Link to={'/'}>
-                            <button className='cart__button'>
-                                Ver catálogo
-                            </button>
-                        </Link>
-                    </div> 
+                    : <MessageCard icon={sadFaceIcon} title='Tu carrito está vacío' message='Te invitamos a que conozcas nuestros productos' showHomeButton={true}/>
             }
         </section>
     );

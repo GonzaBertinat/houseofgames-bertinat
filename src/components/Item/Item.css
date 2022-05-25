@@ -45,7 +45,6 @@
 }
 
 .item__add {
-    background-color: red;
     border: 3px solid black;
     border-radius: 100%;
     color: white;
@@ -55,9 +54,18 @@
     padding: 5px 10px;
 }
 
-.item__add:hover {
+.item__add-enabled {
+    background-color: red;
+}
+
+.item__add-enabled:hover {
     cursor: pointer;
     transform: scale(1.1);
+}
+
+.item__add-disabled {
+    background-color: rgb(229, 127, 127);
+    cursor: not-allowed; 
 }
 
 .item__details-button {

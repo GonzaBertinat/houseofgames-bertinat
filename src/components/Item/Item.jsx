@@ -4,7 +4,8 @@ import CartContext from '../../store/CartContext';
 import './Item.css';
 
 const Item = ({ item }) => {
-    const cartContext = useContext(CartContext);
+    const cartContext = useContext(CartContext);    
+    const stockAvailable = item?.stock > 0;
 
     return (
         <div className='item'>
@@ -16,7 +17,9 @@ const Item = ({ item }) => {
             <div className="item__price">
                 <span>$ {item?.price}</span>
             </div>
-            <button className='item__add' onClick={() => cartContext.addItem(item, 1)}>+</button>
+            <button className={`item__add ${stockAvailable ? 'item__add-enabled' : 'item__add-disabled'}`}
+                    onClick={() => cartContext.addItem(item, 1)}
+                    disabled={!stockAvailable}>+</button>
             <div className='item__details-button'>
                 <Link to={`/item/${item?.id}`}>Ir al producto</Link>
             </div>
