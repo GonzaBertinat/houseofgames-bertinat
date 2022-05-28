@@ -11,7 +11,7 @@ const CartWidget = () => {
         <div className='navbar__cart'>
             <Link to={'/cart'}>
                 <div className='navbar__cart-container'>
-                    <img src={cartIcon}></img>
+                    <img src={cartIcon} alt='Carrito de compras'></img>
                     {cartContext.getCartQuantity() > 0 ? <div className='navbar__cart-quantity'>{cartContext.getCartQuantity()}</div> : '' }      
                 </div>                
             </Link>

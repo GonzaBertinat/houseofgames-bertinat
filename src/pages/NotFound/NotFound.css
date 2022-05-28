@@ -1,8 +1,9 @@
 .not-found {
     align-items: center;
+    background-color: #ebebeb;
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 65vh;
     justify-content: center;    
 }
 

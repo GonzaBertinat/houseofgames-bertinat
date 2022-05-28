@@ -6,6 +6,7 @@ import Cart from './pages/Cart/Cart';
 import NotFound from './pages/NotFound/NotFound';
 import Checkout from './pages/Checkout/Checkout';
 import './App.css';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -23,7 +24,9 @@ const App = () => {
           <Route path='*' element={<NotFound />} />
         </Routes>
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 .cart {
     background-color: #ebebeb;
     padding: 30px 0;
+    min-height: 55vh;
 }
 
 .cart__title {
