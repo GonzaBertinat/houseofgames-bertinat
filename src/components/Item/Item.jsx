@@ -9,18 +9,24 @@ const Item = ({ item }) => {
 
     return (
         <div className='item'>
-            <h3 className='item__title'>{item?.title}</h3>
+            <div className='item__title-container'>
+                <h3 className='item__title'>{item?.title}</h3>
+            </div>        
             <div className="item__image-container">
                 <img src={item?.pictureUrl} alt={item?.title} />
             </div>
             <div className="item__price">
                 <span>$ {item?.price}</span>
             </div>
-            <button className={`item__add ${stockAvailable ? 'item__add-enabled' : 'item__add-disabled'}`}
-                    onClick={() => cartContext.addItem(item, 1)}
-                    disabled={!stockAvailable}>+</button>
-            <div className='item__details-button'>
-                <Link to={`/item/${item?.id}`}>Ir al producto</Link>
+            <div className='item__add-container'>
+                <button className={`item__add ${stockAvailable ? 'item__add-enabled' : 'item__add-disabled'}`}
+                        onClick={() => cartContext.addItem(item, 1)}
+                        disabled={!stockAvailable}>+</button>
+            </div>
+            <div className='item__details-button-container'>
+                <div className='item__details-button'>
+                    <Link to={`/item/${item?.id}`}>Ir al producto</Link>
+                </div>
             </div>
         </div>
     );
