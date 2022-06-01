@@ -35,7 +35,11 @@ const ItemListContainer = () => {
         <section className='item-list-container'>
             {
                 loading ? <SpinnerLoader/> : 
-                products.length > 0 ? <ItemList items={products}/> : <NotFound />
+                products.length === 0 ? <NotFound /> :
+                <>
+                    <h1 className='item-list-container__title'>{categoryId ? categoryId.charAt(0).toUpperCase() + categoryId.slice(1) : 'Catálogo'}</h1>
+                    <ItemList items={products}/>
+                </> 
             }
         </section>
     );
