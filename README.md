@@ -32,7 +32,7 @@ En esta misma página ir hacia la parte superior y presionar el botón verde con
 
 A continuación en 'Download ZIP':
 
-![Descarga - Paso 2](/src/assets/img/readme/step2.jpeg)
+<img src="/src/assets/img/readme/step2.jpeg" style="max-width: 330px;"></img>
 
 Una vez descargado, descomprimir el archivo zip e importar la carpeta generada dentro de nuestro IDE de preferencia para poder acceder al código fuente.
 
@@ -41,18 +41,26 @@ Una vez descargado, descomprimir el archivo zip e importar la carpeta generada d
 Abrir una terminal y posicionarse dentro del directorio generado en el paso anterior.
 
 Para poder ejecutar el proyecto se deben instalar las dependencias necesarias. Para este propósito se debe ejecutar el comando:
+
 `npm install`
 
 
 #### 3. Ejecutar el proyecto
 
 Por último, para iniciar el proyecto en un servidor local se debe ejecutar el comando:
+
 `npm start`
 
 ---
-## Demo:
+## Demos:
 
-![Navegabilidad por la app](/src/assets/img/readme/demo.gif "Navegabilidad por la app")
+### Navegar por la app
+
+![Navegar por la app](/src/assets/img/readme/demo1.gif "Navegar por la app")
+
+### Realizar una compra
+
+![Realizar una compra](/src/assets/img/readme/demo2.gif "Realizar una compra")
 
 ---
 ## Datos del alumno:
