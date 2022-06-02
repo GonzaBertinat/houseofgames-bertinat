@@ -5,7 +5,18 @@ import './Item.css';
 
 const Item = ({ item }) => {
     const cartContext = useContext(CartContext);    
-    const stockAvailable = item?.stock > 0;
+    
+    const canAddToCart = () => {
+        if(item.stock === 0)
+            return false;
+        if(!cartContext.isInCart(item.id))
+            return true;
+            
+        const product = cartContext.products.find(p => p.id === item.id);
+        return product.quantity < item.stock;
+    }
+
+    const enableAddButton = canAddToCart();
 
     return (
         <div className='item'>
@@ -19,9 +30,9 @@ const Item = ({ item }) => {
                 <span>$ {item?.price}</span>
             </div>
             <div className='item__add-container'>
-                <button className={`item__add ${stockAvailable ? 'item__add-enabled' : 'item__add-disabled'}`}
+                <button className={`item__add ${enableAddButton ? 'item__add-enabled' : 'item__add-disabled'}`}
                         onClick={() => cartContext.addItem(item, 1)}
-                        disabled={!stockAvailable}>+</button>
+                        disabled={!enableAddButton}>+</button>
             </div>
             <div className='item__details-button-container'>
                 <div className='item__details-button'>

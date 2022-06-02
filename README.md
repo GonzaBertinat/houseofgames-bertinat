@@ -32,7 +32,7 @@ En esta misma página ir hacia la parte superior y presionar el botón verde con
 
 A continuación en 'Download ZIP':
 
-<img src="/src/assets/img/readme/step2.jpeg" style="max-width: 330px;"></img>
+<img src="/src/assets/img/readme/step2.jpeg" style="width: 330px;"></img>
 
 Una vez descargado, descomprimir el archivo zip e importar la carpeta generada dentro de nuestro IDE de preferencia para poder acceder al código fuente.
 

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
 import CartContext from '../../store/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css';
@@ -27,7 +26,7 @@ const ItemDetail = ({ item }) => {
                         <span>$ {item?.price}</span>
                     </div>
                     <div className='item-detail__counter'>
-                        <ItemCount stock={item?.stock ? item.stock : 0} initial={1} onAdd={onAddHandler} />
+                        <ItemCount stock={item?.stock ? item.stock : 0} initial={1} onAdd={onAddHandler} item={item} />
                     </div>
                 </div>
             </div>

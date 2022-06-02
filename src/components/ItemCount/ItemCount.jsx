@@ -1,9 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import CartContext from '../../store/CartContext';
 import './ItemCount.css';
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+const ItemCount = ({ stock, initial, onAdd, item }) => {
+    const cartContext = useContext(CartContext);    
+    const [count,setCount] = useState(initial);
 
-    const stockAvailable = stock > 0;
+    const canAddToCart = () => {
+        if(item.stock === 0)
+            return false;
+        if(!cartContext.isInCart(item.id))
+            return true;
+            
+        const product = cartContext.products.find(p => p.id === item.id);
+        return (product.quantity + count) <= stock;
+    }
 
     const increaseCount = () => {
         if(count < stock){
@@ -16,9 +27,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             setCount(count - 1);
         }
     }
-    
-    const [count,setCount] = useState(initial);
 
+    const enableAddButton = canAddToCart();
+    
     return (
     <div className='item-count'>
         <div className='item-count__stock'>
@@ -30,9 +41,9 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             <button onClick={increaseCount}>+</button>
         </div>    
         <div className='item-count__add'>
-            <button className={stockAvailable ? 'item-count__add-enabled' : 'item-count__add-disabled'} 
+            <button className={enableAddButton ? 'item-count__add-enabled' : 'item-count__add-disabled'} 
                     onClick={() => {onAdd(count)}}
-                    disabled={!stockAvailable}>Agregar al carrito</button>                    
+                    disabled={!enableAddButton}>Agregar al carrito</button>                    
         </div>
     </div>);
 }
