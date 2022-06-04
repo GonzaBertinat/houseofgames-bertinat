@@ -111,3 +111,7 @@
     text-decoration: none;
     width: 60%;
 }
+
+.item {
+    min-width: 250px;
+}
