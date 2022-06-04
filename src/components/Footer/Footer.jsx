@@ -1,11 +1,11 @@
 import React from 'react';
-import './Footer.css';
 import facebookIcon from '../../assets/img/facebook.png';
 import instagramIcon from '../../assets/img/instagram.png';
 import twitterIcon from '../../assets/img/twitter.png';
 import brandLogo from '../../assets/img/brand.png';
 import linkedinIcon from '../../assets/img/linkedin.png';
 import { Link } from 'react-router-dom';
+import './Footer.css';
 
 const Footer = () => {
     return (

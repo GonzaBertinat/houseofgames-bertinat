@@ -1,12 +1,14 @@
 import React from 'react';
 import brandLogo from '../../../src/assets/img/brand.png';
 import CartWidget from '../CartWidget/CartWidget';
+import MenuWidget from '../MenuWidget/MenuWidget';
 import { Link, NavLink } from 'react-router-dom';
 import './NavBar.css';
 
 const NavBar = () => {
     return (
         <nav className='navbar'>
+            <MenuWidget />
             <div className='navbar__logo'>
                 <Link to={'/'}>
                     <img src={brandLogo} alt='House of Games'></img>
