@@ -44,8 +44,13 @@ Para poder ejecutar el proyecto se deben instalar las dependencias necesarias. P
 
 `npm install`
 
+#### 3. Asignar variables de entorno
 
-#### 3. Ejecutar el proyecto
+Solicitar al administrador de este repositorio el fichero `.env` que contiene las variables de entorno necesarias para poder ejecutar el proyecto en un servidor local y conectarse correctamente a Firebase. 
+
+Una vez obtenido, copiar el archivo dentro del directorio raíz del repositorio.
+
+#### 4. Ejecutar el proyecto
 
 Por último, para iniciar el proyecto en un servidor local se debe ejecutar el comando:
 
