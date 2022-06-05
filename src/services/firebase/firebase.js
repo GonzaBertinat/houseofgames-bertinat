@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, updateDoc, where } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBqDQEjXVX-h92_bOEiB77WSkcZ1_8TAjs",
-    authDomain: "houseofgames-bertinat.firebaseapp.com",
-    projectId: "houseofgames-bertinat",
-    storageBucket: "houseofgames-bertinat.appspot.com",
-    messagingSenderId: "297769063290",
-    appId: "1:297769063290:web:79b8e4dc066a92a641bcc3"
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
