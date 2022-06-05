@@ -118,7 +118,7 @@ const Checkout = () => {
                                     <input type='text' id='cardNumber' required={true} maxLength={16} placeholder='1111 2222 3333 4444' />
                                 </div>
                                 <div className='checkout__input-group'>
-                                    <label htmlFor='cardName'>Nombre que figura en tarjeta: *</label>
+                                    <label htmlFor='cardName'>Nombre que figura en la tarjeta: *</label>
                                     <input type='text' id='cardName' required={true} maxLength={30} placeholder='JUAN M PEREZ' />
                                 </div>
                                 <div className='checkout__input-group'>

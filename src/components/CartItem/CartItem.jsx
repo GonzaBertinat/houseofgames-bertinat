@@ -15,13 +15,16 @@ const CartItem = ({ item }) => {
             <div className='item-cart__title'>
                 <Link to={`/item/${item.id}`}>{item.title}</Link>
             </div>
-            <div className='item-cart__units'>
+            <div className='item-cart__units item-cart__units--responsive'>
+                <span className='item-cart__property'>Cantidad</span>
                 <span>{item.quantity}</span>
             </div>
-            <div className='item-cart__price'>
+            <div className='item-cart__price item-cart__price--responsive'>
+                <span className='item-cart__property'>Precio Unitario</span>
                 <span>$ {item.price}</span>
             </div>
-            <div className='item-cart__total'>
+            <div className='item-cart__total item-cart__total--responsive'>
+                <span className='item-cart__property'>Subtotal</span>
                 <span>$ {item.price * item.quantity}</span>
             </div>
             <div className='item-cart__remove-item'>

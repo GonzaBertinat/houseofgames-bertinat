@@ -11,8 +11,8 @@ const MenuWidget = () => {
 
     return (
         <div className='menu-widget'>
-            <div className='menu-widget__icon-container'>
-                <img src={menuIcon} alt='Menú' onClick={openMenu} />
+            <div className='menu-widget__icon-container' onClick={openMenu}>
+                <img src={menuIcon} alt='Menú'/>
             </div>
             <div className={`sidebar ${isMenuOpen ? 'sidebar--show' : ''}`}>
                 <ul className='sidebar__links'>

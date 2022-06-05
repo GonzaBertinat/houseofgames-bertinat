@@ -39,6 +39,7 @@
     font-size: 1.3rem;
     font-weight: 600;
     margin: 5px 0;
+    text-align: start;
     width: 100%;
 }
 
@@ -64,6 +65,7 @@
 }
 
 .checkout__form-footer {
+    align-items: center;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -88,4 +90,38 @@
 .checkout__submit-button:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+
+@media only screen and (max-width: 991px){
+    .checkout__form-footer {
+        flex-direction: column;
+    }
+
+    .checkout__submit-button {
+        margin: 20px 0 10px 0;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .checkout__form {
+        padding: 0 20px;
+        width: 70%;
+    }
+    
+    .checkout__submit-button {
+        max-width: 240px;
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 575px){
+    .checkout__form {
+        padding: 0 20px;
+        width: 80%;
+    }
+
+    .checkout__submit-button {
+        width: 80%;
+    }
 }

@@ -24,12 +24,18 @@ const Cart = () => {
                             <span className='cart__header__remove'>Eliminar</span>
                         </div>
                         {cartContext.products.map(product => <CartItem item={product} key={product.id}/>)}
-                        <div className='cart__footer'>    
-                            <button onClick={() => cartContext.clear()} className='cart__button'>Limpiar carrito</button> 
-                            <span className='cart__total'>{`Total: $ ${cartContext.getTotalPrice()}`}</span>
-                            <Link to={'/checkout'}>
-                                <button className='cart__button'>Terminar mi compra</button>
-                            </Link>                        
+                        <div className='cart__footer'> 
+                            <div className='cart__clean'>
+                                <button onClick={() => cartContext.clear()} className='cart__button'>Limpiar carrito</button> 
+                            </div>
+                            <div className='cart__total'>
+                                <span>{`Total: $ ${cartContext.getTotalPrice()}`}</span>
+                            </div>
+                            <div className='cart__finish'>
+                                <Link to={'/checkout'}>
+                                    <button className='cart__button'>Terminar compra</button>
+                                </Link>
+                            </div>             
                         </div>                           
                     </div> 
                     : <MessageCard icon={sadFaceIcon} title='Tu carrito está vacío' message='Te invitamos a que conozcas nuestros productos' showHomeButton={true}/>
